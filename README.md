@@ -19,7 +19,7 @@ This example project of "Random Flickering Pixels" demonstrates basic usage of t
 #include <util/delay.h>
 #include "max7219.h"
 
-#define LFSR_SEED 	(213)
+#define LFSR_SEED	(213)
 
 static uint16_t
 prng_lfsr16(void)
@@ -51,25 +51,6 @@ main(void)
 ## API Documentation (max7219.h)
 
 ```c
-#ifndef _ATTINY_MAX7219_H_
-#define _ATTINY_MAX7219_H_
-
-#include <stdint.h>
-#include <stdbool.h>
-#include <avr/io.h>
-
-#ifndef	MAX7219_DIN_PIN
-# define	MAX7219_DIN_PIN		PB0
-#endif	/* !MAX7219_DIN_PIN */
-
-#ifndef	MAX7219_CLK_PIN
-# define	MAX7219_CLK_PIN		PB1
-#endif	/* !MAX7219_CLK_PIN */
-
-#ifndef	MAX7219_CS_PIN
-# define	MAX7219_CS_PIN		PB2
-#endif	/* !MAX7219_CS_PIN */
-
 /**
  * Initialize display driver.
  * Clock pin, data pin and chip select pin
@@ -108,6 +89,4 @@ void MAX7219_set_intensity(uint8_t value);
  * Clear display. 
  */
 void MAX7219_clear(void);
-
-#endif  /* !_ATTINY_MAX7219_H_ */
 ```
