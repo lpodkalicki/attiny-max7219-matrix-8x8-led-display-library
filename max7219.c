@@ -142,7 +142,9 @@ MAX7219_clear(void)
 	uint8_t i;
 
 	for (i = 0; i < 8; ++i) {
-		MAX7219_state[i] = 0;
-		MAX7219_send(i + 1, 0);
+		if (MAX7219_state[i]) {
+			MAX7219_state[i] = 0;
+			MAX7219_send(i + 1, 0);
+		}
 	}
 }
